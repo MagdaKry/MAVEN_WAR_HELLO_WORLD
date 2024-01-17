@@ -11,5 +11,5 @@
      - name: Run container
        command: >
          docker run -d
-         -- name test
+         --name test
          magkry/application:1.0
