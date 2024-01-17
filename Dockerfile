@@ -3,4 +3,4 @@
 FROM tomcat:9
 LABEL maintainer="magdalena.krysiak@efrei.net"
 COPY target/spring-boot-deployment.war /usr/local/tomcat/webapps/
-EXPOSE 5555
+EXPOSE 8080
