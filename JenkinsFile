@@ -1,22 +1,22 @@
 pipeline{
-    agent any
+    agent {
+        label 'AnsibleControlNode'
+    }
+
     tools {
-      maven "MVN_HOME"
-      jdk "JDK8"
+        maven "MVN_HOME"
     }
 
     stages{
        stage('Maven Build') {
          steps {
            echo 'Here you should trigger a maven build of your application using either bat(windows) or sh(linux)'
-           bat "mvn clean package"
+           sh "mvn clean package"
          }
        }
        
       stage('Docker Build'){
-            agent {
-                label 'AnsibleControlNode'
-            }
+
             steps{
                 echo 'In this step you should build your docker image using the docker build command'
                 echo 'So you need to build an image from the WAR that you generated previously'
