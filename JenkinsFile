@@ -1,13 +1,15 @@
 pipeline{
     agent any
     tools {
-      maven 'MVN_HOME'
+      maven "MVN_HOME"
+      jdk "JDK8"
     }
 
     stages{
        stage('Maven Build') {
          steps {
            echo 'Here you should trigger a maven build of your application using either bat(windows) or sh(linux)'
+           bat "mvn clean package"
          }
        }
        
