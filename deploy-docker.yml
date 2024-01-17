@@ -3,16 +3,16 @@
   hosts: linuxclient1
   become: True
   become_user: root
-  
+  #
  # tasks:
 #    - name: Install yum-utils (use the yum module)
  #     yum:
   #      name: yum-utils
    #     state: present
-        
+       # 
    # - name: Download Docker repository file using the get_url
     #  shell: sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-      
+      #
   #  - name: Install Docker packages (engine) using yum module, reference https://docs.docker.com/engine/install/centos/#installation-methods
    #   yum:
     #    name:
@@ -22,13 +22,13 @@
         #  - docker-buildx-plugin
          # - docker-compose-plugin
         #state: present
-        
-    - name: Start Docker service using the systemd module
-      systemd:
-        name: docker
-        state: started
-        enabled: yes
-        
+     #   
+ #   - name: Start Docker service using the systemd module
+ #     systemd:
+ #       name: docker
+  #      state: started
+   #     enabled: yes
+    #    
     - name: Install pip
       yum:
         name: python-pip2
