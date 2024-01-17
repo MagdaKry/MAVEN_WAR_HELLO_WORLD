@@ -5,8 +5,8 @@
   become_user: root
   
   tasks:
-     - name: Pull
-       command: "docker pull magkry/application:1.0"
+     #- name: Pull
+     #  command: "docker pull magkry/application:1.0"
 
      - name: Run container
        command: >
