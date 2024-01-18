@@ -12,7 +12,7 @@
   - name: Install Python3 pip
     package:
         name: python3-pip
-        start: present
+        state: present
   - name: Install Docker Python lib
     pip:
         name: docker
