@@ -16,7 +16,7 @@
   - name: Install Docker Python lib
     pip:
         name: docker
-        satte: present
+        state: present
         executable: pip3
       
   - name: Pull image and create the container using docker_container
