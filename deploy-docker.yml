@@ -63,5 +63,5 @@
         ports:
           - "8080:8080"
 
-     - name: Exit Python interpreter
-       command: echo "exit()" | ansible_python_interpreter      
+    - name: Exit Python interpreter
+      command: echo "exit()" | ansible_python_interpreter      
