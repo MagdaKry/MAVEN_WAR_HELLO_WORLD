@@ -1,6 +1,6 @@
 ## Spring Boot Deployment
 
-Full test MK 18.01.24 12:22
+Full test MK 18.01.24 12:34
 This module contains articles about deployment of a Spring Boot Application
 
 ### Relevant Articles:			
