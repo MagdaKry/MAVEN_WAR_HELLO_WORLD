@@ -38,4 +38,5 @@
         name: applicationdep1
         image: magrky/application:1.0
         state: started
-        restart_policy: always
+        tty: true
+        #restart_policy: always
