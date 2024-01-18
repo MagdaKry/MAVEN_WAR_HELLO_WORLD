@@ -5,36 +5,28 @@
   become_user: root
   
   tasks:
-    - name: Install yum-utils (use the yum module)
-      yum:
-       name: yum-utils
-       state: present
-        
-    - name: Download Docker repository file using the get_url
-      shell: sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-      
-    - name: Install Docker packages (engine) using yum module, reference https://docs.docker.com/engine/install/centos/#installation-methods
-      yum:
-        name:
-          - docker-ce
-          - docker-ce-cli
-          - containerd.io
-          - docker-buildx-plugin
-          - docker-compose-plugin
+  - name: Install Python 3
+    package:
+        name: python3
         state: present
-        
-    - name: Start Docker service using the systemd module
-      systemd:
+  - name: Install Python3 pip
+    package:
+        name: python3-pip
+        start: present
+  - name: Install Docker Python lib
+    pip:
         name: docker
+        satte: present
+        executable: pip3
+      
+  - name: Pull image and create the container using docker_container
+    docker_image:
+        name: magkry/application:1.0
+        source: pull
+      
+  - name: Start the container using docker_container
+    docker_container:  
+        name: applicationdep1
+        image: magrky/application:1.0
         state: started
-        enabled: yes
-
-    - name: Pull
-      command: "docker pull magkry/application:1.0"
-
-    - name: Run container
-      command: >
-         docker run -d
-         -p 3333:8080
-         --name test
-         magkry/application:1.0
+        restart_policy: always
