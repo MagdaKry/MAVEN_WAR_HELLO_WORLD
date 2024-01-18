@@ -35,5 +35,6 @@
     - name: Run container
       command: >
          docker run -d
+         -p 3333:8080
          --name test
          magkry/application:1.0
