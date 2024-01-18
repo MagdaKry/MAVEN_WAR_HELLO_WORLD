@@ -18,7 +18,11 @@
         name: docker
         state: present
         executable: pip3
-      
+  - name: Ensure Ansible is using correct Python interpreter
+    set_fact:
+        ansible_python_interpreter: /usr/bin/python3
+    run_once: true
+                    
   - name: Pull image and create the container using docker_container
     docker_image:
         name: magkry/application:1.0
