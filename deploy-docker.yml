@@ -24,7 +24,7 @@
     run_once: true
     
   - name: log into docker hub registry using the docker_login module
-      docker_login:
+    docker_login:
         username: magkry
         password: Efrei!17Efrei
         
